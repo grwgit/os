@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="OFF">  
+  <Properties>
+       <Property name="log.path">./logs</Property>
+       <Property name="log.pattern">[%1.1level] %d{MM/dd HH:mm:ss,SSS}	%c{2}.%M(%L) - %m%n</Property>
+  </Properties>
+  <appenders>  
+    <Console name="Console" target="SYSTEM_OUT">  
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>  
+    </Console>  
+  </appenders>  
+  <loggers>  
+     <logger name="com.johe.dao.impl" level="debug" additivity="false" >
+         <appender-ref ref="Console"/>
+     </logger>
+     <logger name="com.johe.test" level="trace" additivity="false">
+        <appender-ref ref="Console"/>
+     </logger>
+    <root level="all">  
+      <appender-ref ref="Console"/>  
+    </root>  
+  </loggers>  
+</configuration>  
